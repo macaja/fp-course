@@ -1,39 +1,67 @@
-import com.sun.corba.se.impl.orbutil.graph.Node
+class ListP[T] //Type Parameter
 
-class ListP[T]   //Type Parameter
-
-trait ListM{  // Type member
-  type T
+trait ListM { // Type member
+type T
 }
 
 //Redundant code
 
-trait IterableR[T]{
+trait IterableR[T] {
   def filter(p: T => Boolean): IterableR[T]
+
   def remove(p: T => Boolean): IterableR[T] = filter(x => !p(x))
 }
-trait ListR[T] extends IterableR[T]{
+
+trait ListR[T] extends IterableR[T] {
   def filter(p: T => Boolean): ListR[T]
+
   override def remove(p: T => Boolean): ListR[T] = filter(x => !p(x)) //redundant code
 }
 
 //Avoid duplicated code
 
-trait IterableA[T, Container[X]]{
+trait IterableA[T, Container[X]] {
   def filter(p: T => Boolean): Container[T]
-  def remove(p:T => Boolean): Container[T] = filter(x => !p(x))
+
+  def remove(p: T => Boolean): Container[T] = filter(x => !p(x))
 }
-trait ListA[T] extends IterableA[T,ListA]{
+
+trait ListA[T] extends IterableA[T, ListA] {
   override def filter(p: T => Boolean): ListA[T]
 }
 
-object ListA{
-  //def apply[A](a: A): ListA[A] = new ListA(a)
-/*  implicit object intList extends ListA[Int]{
-    def filter(p: Int => Boolean): ListA[Int] = if(p(_) == true) ListA(1) else ListA(0)
-  }*/
+case class TxDTO(
+                sku:String,
+                departmen: Int,
+                subdepartment: Int,
+                `class`: Int,
+                subclass: Int
+                )
+
+object TxDTO{
+
+  def validate
+
 }
 
-//val la: ListA[Int] = ListA.apply(1)
-//val f = la.filter(_ > 2)
+
+trait State {
+  val code: Int
+}
+
+case class Department(code: Int) extends State
+
+case class SubDepartment(code: Int, department: Department) extends State
+
+case class Class(code: Int, subDepartment: SubDepartment) extends State
+
+case class SubClass(code: Int, `class`: Class) extends State
+
+case class Tx(
+               sku: String,
+               department: Department,
+               subDepartment: SubDepartment,
+               `class`: Class,
+               subClass: SubClass
+             )
 
