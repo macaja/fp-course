@@ -2,7 +2,8 @@ package course
 
 import scala.util.Try
 
-class ListOperations[A] {
+
+abstract class ListOperations[A] {
 
   //Working with lists.
   def lastElement(list: List[A]): Option[A] = list.takeRight(1).headOption
@@ -19,3 +20,5 @@ class ListOperations[A] {
 
   def flatten(list: List[List[A]]): List[A] = list.flatten
 }
+
+object ListInt extends ListOperations[Int]
