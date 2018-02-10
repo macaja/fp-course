@@ -34,6 +34,14 @@ class ListOperationsSpec extends AsyncWordSpec with Matchers {
       li.flatten(List(List(1, 2), List(2, 4), List(5, 6), List(7, 8))) shouldBe List(1, 2, 2, 4, 5, 6, 7, 8)
       li.flatten(List(List())) shouldBe List()
     }
+
+    "factorial" in{
+      li.factorial(5) shouldBe 120
+    }
+    "fibonnaci" in{
+      li.fibonnacci(2) shouldBe 1
+    }
+
   }
 
 }

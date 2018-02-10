@@ -19,6 +19,22 @@ abstract class ListOperations[A] {
   def isPalindrome(list: List[A]): Boolean = if (list == reverse(list)) true else false
 
   def flatten(list: List[List[A]]): List[A] = list.flatten
+
+  def factorial(n: Int): Int = {
+    if (n <= 1) {
+      1
+    } else {
+      n * factorial(n - 1)
+    }
+  }
+  def fibonnacci(n: Int): Int = {
+    if(n <=1){
+      1
+    }else{
+      fibonnacci(n-1) + fibonnacci(n-2)
+    }
+  }
+
 }
 
 object ListInt extends ListOperations[Int]
