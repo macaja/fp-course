@@ -7,7 +7,7 @@ class ListOperationsSpec extends AsyncWordSpec with Matchers {
   val li = ListInt
   val list = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
-  "LIst Operations" should {
+  "List Operations" should {
     "get the last element of a list" in {
       li.lastElement(list) shouldBe Some(9)
     }
@@ -39,7 +39,7 @@ class ListOperationsSpec extends AsyncWordSpec with Matchers {
       li.factorial(5) shouldBe 120
     }
     "fibonnaci" in{
-      li.fibonnacci(2) shouldBe 1
+      li.fibonnacci(2) shouldBe 2
     }
 
   }
