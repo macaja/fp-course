@@ -30,38 +30,5 @@ trait ListA[T] extends IterableA[T, ListA] {
   override def filter(p: T => Boolean): ListA[T]
 }
 
-case class TxDTO(
-                sku:String,
-                departmen: Int,
-                subdepartment: Int,
-                `class`: Int,
-                subclass: Int
-                )
 
-object TxDTO{
-
-  def validate
-
-}
-
-
-trait State {
-  val code: Int
-}
-
-case class Department(code: Int) extends State
-
-case class SubDepartment(code: Int, department: Department) extends State
-
-case class Class(code: Int, subDepartment: SubDepartment) extends State
-
-case class SubClass(code: Int, `class`: Class) extends State
-
-case class Tx(
-               sku: String,
-               department: Department,
-               subDepartment: SubDepartment,
-               `class`: Class,
-               subClass: SubClass
-             )
 
