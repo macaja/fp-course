@@ -9,7 +9,7 @@ object Test {
     println("Hello I'm a field")
     42
   }
-  def method = {
+  def method() = {
     println("Hello I'm a method")
   }
 }
