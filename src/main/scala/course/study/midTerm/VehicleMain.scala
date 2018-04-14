@@ -18,7 +18,7 @@ object VehicleMain extends App{
   service.save(vehicleDto).fold(
     err => println(s"domain error ${err.message}"),
     f => {
-      val s = Await.result(f,2.seconds)
+      val s = Await.result(f,2.seconds) //Only with demonstrative purpose
       println(s"result => $s")
     }
   )
