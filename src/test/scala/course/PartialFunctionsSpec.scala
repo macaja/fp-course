@@ -1,5 +1,6 @@
 package course
 
+import course.classes.PartialFunctions
 import org.scalatest.{AsyncWordSpec, Matchers}
 
 class PartialFunctionsSpec extends AsyncWordSpec with Matchers{

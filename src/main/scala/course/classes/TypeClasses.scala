@@ -1,4 +1,4 @@
-package course
+package course.classes
 
 object TypeClasses extends App {
 
@@ -30,8 +30,8 @@ object TypeClasses extends App {
     def add[A](a:A,b: A)(implicit sm:Sum[A]) = sm.add(a,b)
     def zero[A](implicit sm:Sum[A]) = sm.zero
   }
-  import course.TypeClasses.SumInst._
-  import course.TypeClasses.SumOps._
+  import TypeClasses.SumInst._
+  import TypeClasses.SumOps._
   println(add(1,2))
   println(add("1","2"))
   println(add(Person("Jose",20.0),Person("Camilo",30.0)))

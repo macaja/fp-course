@@ -1,6 +1,7 @@
 package course
 
-import course.CurrencyTransformation._
+import course.classes.CurrencyTransformation
+import course.classes.CurrencyTransformation._
 import org.scalatest.{AsyncWordSpec, Matchers}
 
 class CurrencyTransformationSpec extends AsyncWordSpec with Matchers{

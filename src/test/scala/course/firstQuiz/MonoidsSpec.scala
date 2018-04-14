@@ -1,6 +1,6 @@
-package course.midTerm
+package course.firstQuiz
 
-import course.midTerm.ℤ._
+import course.firstQuiz.ℤ._
 import org.scalacheck.Prop._
 import org.scalacheck.Properties
 import org.scalatest._

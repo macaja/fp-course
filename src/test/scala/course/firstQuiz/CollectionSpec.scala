@@ -1,4 +1,4 @@
-package course.midTerm
+package course.firstQuiz
 
 import org.scalacheck.Prop._
 import org.scalacheck.Properties

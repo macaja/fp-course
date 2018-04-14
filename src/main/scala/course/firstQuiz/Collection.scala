@@ -1,4 +1,4 @@
-package course.midTerm
+package course.firstQuiz
 
 import scala.annotation.tailrec
 
