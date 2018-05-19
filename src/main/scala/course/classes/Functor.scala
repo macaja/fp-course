@@ -1,4 +1,3 @@
-/*
 package course.classes
 
 import scala.language.higherKinds
@@ -34,13 +33,6 @@ object FunctorTest {
   Functor[List].map(x)(f) // List(2,3,4,5)
 
   val l = List(("a", 10), ("b", 20))
-  Functor[List].map(l)(t => Functor[({type f[x] = (String, x)})#f].map(t)(f)) // List[(String, Int)] = List((a,11), (b,21))
-
-  import Syntax._
-
-  List(1,2,3) map f // List(2,3,4)
-  l.map(e => Functor[({type f[x] = (String, x)})#f].map(e)(f))  // List[(String, Int)] = List((a,11), (b,21))
 
   type Tup[A] = (String, A)
-  l.map(e => Functor[Tup].map(e)(f)) // List[Tup[Int]] = List((a,11), (b,21))
-}*/
+}

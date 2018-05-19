@@ -1,7 +1,5 @@
 package course.classes
 
-import cats.Functor
-
 import scala.language.higherKinds
 
 trait Applicative[F[_]] extends Functor[F] {
