@@ -1,6 +1,5 @@
-package course
+package course.classes
 
-import course.classes.DBMock
 import org.scalatest.concurrent.ScalaFutures
 import org.scalatest.{AsyncWordSpec, Matchers}
 

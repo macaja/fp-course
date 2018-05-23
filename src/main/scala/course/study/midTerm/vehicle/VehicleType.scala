@@ -8,11 +8,11 @@ case object Car extends VehicleType
 case object Van extends VehicleType
 case object Motorcycle extends VehicleType
 
-object VehicleType{
-  def apply(t: String): Either[DomainError,VehicleType] = t.toLowerCase match{
-    case "car" => Car.asRight
-    case "van" => Van.asRight
+object VehicleType {
+  def apply(t: String): Either[DomainError, VehicleType] = t.toLowerCase match {
+    case "car"        => Car.asRight
+    case "van"        => Van.asRight
     case "motorcycle" => Motorcycle.asRight
-    case _ => InvalidVehicleType().asLeft
+    case _            => InvalidVehicleType().asLeft
   }
 }

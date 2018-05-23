@@ -1,10 +1,15 @@
 package midTermSolution.domain.services
 
-import midTermSolution.domain.account.Account
+import midTermSolution.DomainServiceError
+import midTermSolution.domain.account.{Account, Balance}
 import midTermSolution.domain.deposit.Deposit
 
-final class Credit(account: Account, creditDeposit: Deposit) {
-  def execute = account.copy(deposit = sumDeposits(account.deposit + creditDeposit ))
-
-  private[this] def sumDeposits(dA:Deposit, dB: Deposit) = if(dA.currency == dB.currency) Deposit(dA.amount+dB.amount,dA.currency) else
+final case class  Credit(account: Account, amount: Double, currency: String) {
+  def execute: Either[DomainServiceError, Account] =
+    for {
+      d <- Deposit(amount, currency)
+      c <- validateDepositWithAccountCurrency(account.balance.currency,
+                                              d.currency)
+      b <- Balance(account.balance.amount + d.amount, c)
+    } yield account.copy(balance = b)
 }

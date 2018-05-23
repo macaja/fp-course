@@ -1,6 +1,5 @@
-package course
+package course.classes
 
-import course.classes.TailRecursion
 import org.scalatest.{AsyncWordSpec, Matchers}
 
 class TailRecursionSpec extends AsyncWordSpec with Matchers{

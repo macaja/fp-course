@@ -9,11 +9,13 @@ object CurrencyTransformation {
 
   case class Cash(amount: Double, currency: Currency)
 
-  def toCop(c: Cash, trms: Map[Currency,Double]): Either[String, Double] =
-    trms.get(c.currency).fold[Either[String,Double]](
-      Left(s"trm list doesn't have currency ${c.currency}")
-    )(
-      trmValue => Right(c.amount * trmValue)
-    )
+  def toCop(c: Cash, trms: Map[Currency, Double]): Either[String, Double] =
+    trms
+      .get(c.currency)
+      .fold[Either[String, Double]](
+        Left(s"trm list doesn't have currency ${c.currency}")
+      )(
+        trmValue => Right(c.amount * trmValue)
+      )
 
 }

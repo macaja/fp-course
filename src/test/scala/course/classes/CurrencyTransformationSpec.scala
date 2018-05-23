@@ -1,6 +1,5 @@
-package course
+package course.classes
 
-import course.classes.CurrencyTransformation
 import course.classes.CurrencyTransformation._
 import org.scalatest.{AsyncWordSpec, Matchers}
 

@@ -1,6 +1,5 @@
-package course
+package course.classes
 
-import course.classes.ListInt
 import org.scalatest.{AsyncWordSpec, Matchers}
 
 class ListOperationsSpec extends AsyncWordSpec with Matchers {

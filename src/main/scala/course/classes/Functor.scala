@@ -18,16 +18,17 @@ object Functor {
     def map[A, B](a: Option[A])(f: A => B): Option[B] = a map f
   }
 
-  implicit def Tuple2Functor[A1]: Functor[({type f[x] = (x, A1)})#f] = new Functor[({type f[x] = (x, A1)})#f] {
-    def map[A, B](a: (A, A1))(f: A => B): (B, A1) = (f(a._1), a._2)
-  }
+  implicit def Tuple2Functor[A1]: Functor[({ type f[x] = (x, A1) })#f] =
+    new Functor[({ type f[x] = (x, A1) })#f] {
+      def map[A, B](a: (A, A1))(f: A => B): (B, A1) = (f(a._1), a._2)
+    }
 
 }
 
 object FunctorTest {
   import Functor._
 
-  val x = List(1,2,3,4)
+  val x = List(1, 2, 3, 4)
   val f: Int => Int = _ + 1
 
   Functor[List].map(x)(f) // List(2,3,4,5)

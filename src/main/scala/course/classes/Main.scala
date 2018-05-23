@@ -13,6 +13,3 @@ object Test {
     println("Hello I'm a method")
   }
 }
-
-
-

@@ -1,6 +1,5 @@
-package course
+package course.classes
 
-import course.classes.Polymorphism
 import org.scalatest.{AsyncWordSpec, Matchers}
 
 class PolymorphismSpec extends AsyncWordSpec with Matchers{

@@ -1,6 +1,5 @@
-package course
+package course.classes
 
-import course.classes.monadInstances
 import org.scalatest.{FlatSpec, Matchers}
 
 import scala.util.{Failure, Success, Try}
@@ -8,8 +7,8 @@ import scala.util.{Failure, Success, Try}
 class MonadTest extends FlatSpec with Matchers{
 
   "Monad" should "x" in{
-    import monadInstances._
     import course.classes.monadValidations._
+    import monadInstances._
     type either[A] = Either[String, A]
     def fo: Int => Option[Int] = _ => Some(1)
     def fon: Int => Option[Int] = _ => None

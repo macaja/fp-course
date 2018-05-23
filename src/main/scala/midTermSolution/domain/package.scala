@@ -1,5 +1,5 @@
 package midTermSolution
 
-trait DomainServiceError{
+trait DomainServiceError {
   def message: String
 }

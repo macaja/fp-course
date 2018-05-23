@@ -1,4 +1,4 @@
-package course
+package course.classes
 
 import org.scalatest.{FlatSpec, Matchers}
 
